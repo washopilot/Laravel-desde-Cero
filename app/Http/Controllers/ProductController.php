@@ -23,8 +23,7 @@ class ProductController extends Controller {
   public function show($product) {
     $product = Product::findOrFail($product);
     return view('products.show')->with([
-      'product' => $product,
-      'html' => '<h2>Subtitle</h2>'
+      'product' => $product
     ]);
   }
 

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Products</title>
-</head>
-
-<body>
+@section('content')
   <h1>List of Products</h1>
 
   @empty($products)
@@ -43,6 +35,4 @@
       </table>
     </div>
   @endempty
-</body>
-
-</html>
+@endsection
