@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class ProductController extends Controller {
   public function index() {
     $products = Product::all();
-    dd($products);
     return view('products.index');
   }
 
@@ -22,8 +21,10 @@ class ProductController extends Controller {
 
   public function show($product) {
     $product = Product::findOrFail($product);
-    dd($product);
-    return view('products.show');
+    return view('products.show')->with([
+      'product' => $product,
+      'html' => '<h2>Subtitle</h2>'
+    ]);
   }
 
   public function edit($product) {
