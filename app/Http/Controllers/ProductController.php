@@ -7,24 +7,20 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller {
   public function index() {
-    return view('products.index')->with([
-      'products' => Product::all()
-    ]);
+    return view('products.index')->with(['products' => Product::all()]);
   }
 
   public function create() {
-    return 'This is the form to create a product from CONTROLLER';
+    return view('products.create');
   }
 
   public function store() {
-    //
+    dd('Estamos en store');
   }
 
   public function show($product) {
     $product = Product::findOrFail($product);
-    return view('products.show')->with([
-      'product' => $product
-    ]);
+    return view('products.show')->with(['product' => $product]);
   }
 
   public function edit($product) {
